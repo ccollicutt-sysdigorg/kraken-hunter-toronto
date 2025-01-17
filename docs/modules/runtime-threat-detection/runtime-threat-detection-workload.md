@@ -65,17 +65,17 @@ In addition to our 'traditional' Rules/Policies-based approach, there are three 
     6. Then go back to the Sysdig UI tab and refresh that tab in your browser
         1. You'll see a circular visualisation/heatmap of which clusters, namespaces and Pods the runtime events we've seen are coming from on the left
         2. And it also gives you either a summary of those events in the **Summary** tab or a full timeline of them in the **Events** tab on the right
-        !["threats"](/instruction-images/threats.png)
+        !["threats"]({{site.baseurl}}/assets/images/threats.png)
     7. Choose the Events tab on the right
     8. As you can see there are a number of events that Sysdig picked up here - in real-time!
-        1. !["threats2"](/instruction-images/threats2.png)
+        1. !["threats2"]({{site.baseurl}}/assets/images/threats2.png)
     9. If you click into the the top **Detect crypto miners using the Stratum protocol** and then scroll through it you'll see all the context of that event including details of the process, the network, the AWS account, the Kubernetes cluster/namespace/deployment, the host as well as the container
        1. In particular the process tree view shows us that our Python app (gunicorn) launched a shell that launched the crypto miner xmrig - that looks suspicious!
-        !["processtree"](/instruction-images/processtree.png)
+        !["processtree"]({{site.baseurl}}/assets/images/processtree.png)
        2. You can also click Explore in order to see a more detailed view of this process tree and the history within this environment
-        !["explore"](/instruction-images/explore.png)
+        !["explore"]({{site.baseurl}}/assets/images/explore.png)
        3. Not only does this view show us all the other Events related to this executable (xmrig) on the right, it shows us all the other things that have been happening - the apt-get's, nmap, nsenter's, etc.
-        !["explore2"](/instruction-images/explore2.png)
+        !["explore2"]({{site.baseurl}}/assets/images/explore2.png)
 3. Understanding these Events
     1. You should scroll down to the oldest/first Event then click into each to reveal all the detail/context of each. The things that we picked up here include:
         1. **Read sensitive file untrusted** - reading the `/etc/shadow` file which a web service shouldn't be doing
@@ -86,7 +86,7 @@ In addition to our 'traditional' Rules/Policies-based approach, there are three 
         5. **The docker client is executed in a container** - this fires not just on the **docker** CLI but also other container CLIs such as **crictl** and **kubectl**.
             - It is unusual for a container to be trying to talk directly to the container runtime/socket on a Kubernetes cluster - and that you can is actually proof a container escape has happened!
             - Note that if you expand out the Process section it'll show the commands that were run such as that `psql` that was exfiltrating our data
-            - !["psql"](/instruction-images/psql.png)
+            - !["psql"]({{site.baseurl}}/assets/images/psql.png)
         6. **Contact EC2 Instance Metadata Service From Container** - your EKS Pods should be using other means such as [IAM Roles for Service Accounts (IRSA)](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) to interact with AWS. It going through the Node to use its credentials instead is suspicious
         7. **Malware Detection** - we look for many malware filenames and hashes from our threat feeds - including crypto miners such as the **xmrig** here
             - We can even block malware from running - as you'll see later on!
@@ -104,7 +104,7 @@ In order for this attack to succeed many things had to be true:
 
 1. Our service was vulnerable to remote code execution - this could be either due to our own code being vulnerable (as was the case here) or an opensource package our app uses (from pip, npm, maven, nuget, etc.) being vulnerable
 2. Our service that we were **curl**'ing was running as **root** - so, not only could it read/write everything within the container's filesystem, but it was also root when it escaped out of the container to the host!
-3. The PodSpec had [**hostPID: true**](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/3da34f8429bd26b82a3ee2f052d2b654d308990f/k8s-manifests/04-security-playground-deployment.yaml#L18) as well as [privileged **securityContext**](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/3da34f8429bd26b82a3ee2f052d2b654d308990f/k8s-manifests/04-security-playground-deployment.yaml#L35) which allowed it to escape its container boundary (the Linux namespace it was being run in) to the host and then control that hosts's container runtime (bypassing Kubernetes and the [kubelet](https://kubernetes.io/docs/concepts/overview/components/#kubelet)). That in turn lets it control all the other containers that happened to be running on that Node. !["diagram1"](/instruction-images/diagram1.png)
+3. The PodSpec had [**hostPID: true**](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/3da34f8429bd26b82a3ee2f052d2b654d308990f/k8s-manifests/04-security-playground-deployment.yaml#L18) as well as [privileged **securityContext**](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/3da34f8429bd26b82a3ee2f052d2b654d308990f/k8s-manifests/04-security-playground-deployment.yaml#L35) which allowed it to escape its container boundary (the Linux namespace it was being run in) to the host and then control that hosts's container runtime (bypassing Kubernetes and the [kubelet](https://kubernetes.io/docs/concepts/overview/components/#kubelet)). That in turn lets it control all the other containers that happened to be running on that Node. !["diagram1"]({{site.baseurl}}/assets/images/diagram1.png)
     1. The `nsenter` command lets us switch Linux namespaces - which containers use to isolate us from the other containers. We can only successfully run this if we are root, have hostPID as well as a privileged security context.
     2. The `crictl` command is like the Docker CLI but for containerd (which is the container runtime used these days by Kubernetes Nodes). We can only successfully run this if we are root as well as on the host (such as breaking out with nsenter).
 4. The attacker was able to add new executables like `nmap` and the crypto miner `xmrig` to the container at runtime and run them
@@ -144,7 +144,7 @@ And, if we do all three, then we could have prevented the **entire** attack (rat
 For each of the causes above - these are the solutions:
 
 1. To fix the vulnerabilities in our case here, we can use a Static application security testing (SAST) product to identify our insecure code. Our partners like [Snyk](https://snyk.io/product/snyk-code/) and [Checkmarx](https://checkmarx.com/cxsast-source-code-scanning/) can help here.
-    1. !["Snyk-SAST"](/instruction-images/Snyk-SAST.png)
+    1. !["Snyk-SAST"]({{site.baseurl}}/assets/images/Snyk-SAST.png)
     1. Alternatively, if this was based on a known/public CVE within the app/container (such as Log4J etc.) instead, Sysdig's Vulnerability Management (which we'll explore in a future Module) would have detected it and let us know to patch either the base layer of our container or the code package to an updated version without the vulnerability
 1. In order to run this container as non-root we actually need to change the Dockerfile in the following ways. Here is the [Dockerfile](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/main/docker-build-security-playground/Dockerfile) before these changes - and [here](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/main/docker-build-security-playground/Dockerfile-unprivileged) it is after.
     1. We need to [add a user and group to use](https://github.com/sysdiglabs/kraken-hunter-example-scenarios/blob/main/docker-build-security-playground/Dockerfile-unprivileged#L3) as part of the docker build
@@ -192,7 +192,7 @@ If we also add in Sysdig enforcing that any Container Drift is prevented (that n
 
     which runs all those same curls but against a workload that is both restricted like the last example but also has Sysdig preventing Container Drift (rather than just detecting it)
     1. If you look at the resulting Events in our Threats UI you'll see the Drift was **prevented** rather than just detected this time
-    2. !["driftprevented"](/instruction-images/driftprevented.png)
+    2. !["driftprevented"]({{site.baseurl}}/assets/images/driftprevented.png)
 
 And, we also can now block instead of just detecting Malware.
 To see that:
@@ -207,7 +207,7 @@ To see that:
 
     which runs all those same curls but against a workload that is both restricted but also has Sysdig preventing malware (rather than just detecting it) (but not blocking Container Drift - as we want to show that the malware tries to run so we can block it with that)
     1. If you look at the resulting Events in our Threats UI you'll see the Malware was **prevented** from running rather than just detected this time
-    2. !["malware"](/instruction-images/malware.png)
+    2. !["malware"]({{site.baseurl}}/assets/images/malware.png)
 
 So, as you can see, a combination of fixing the posture of the workload as well as Sysdig's Container Drift and Malware Detection goes a **long** way to preventing so many common attacks - even against workload with such critical vulnerabilities!
 
@@ -218,7 +218,7 @@ kubectl apply -f 01-cfg-security-playground-test.yaml
 ```
 
 Note how we're warned that is not allowed in the **security-playground-restricted** Namespace due to the restricted PSA in place there. Even though it let the Deployment create - you'll note that it (actually its ReplicaSet) is unable to actually launch the Pods.
-!["psa"](/instruction-images/psa.png)
+!["psa"]({{site.baseurl}}/assets/images/psa.png)
 
 Run
 
