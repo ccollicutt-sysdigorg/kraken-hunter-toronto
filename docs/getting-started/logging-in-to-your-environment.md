@@ -18,7 +18,7 @@ You'll have received your IAM username and password from the facilitator. This e
   - This has a number of workloads in a number of different Namespaces pre-installed
     - We leverage different Namespaces to show the challenges with multi-tenancy of EKS as well as to apply different Sysdig policies to different workloads (to demonstrate the different ways you can configure those policies and scope them within Sysdig)
 - An S3 bucket (which you'll be using to exfiltrate some data in the workshop)
-!["diagram2"](/instruction-images/diagram2.png)
+!["diagram2"]({{site.baseurl}}/assets/images/diagram2.png)
 
 To sign into your environment:
 
@@ -28,15 +28,15 @@ To sign into your environment:
 2. If prompted, choose to sign in with an IAM user (as opposed to the Root user) and enter the AWS Account ID of ["YOUR_AWS_ACCOUNT_ID section"](#know-your-aws-region-and-account)
 3. Enter the IAM username and password you were provided and click the **Sign in** button
 4. Pick the ["YOUR_AWS_ACCOUNT_ID section"](#know-your-aws-region-and-account) region in the drop-down in the upper right of the console
-    1. !["region-us"](/instruction-images/region-us.png)
+    1. !["region-us"]({{site.baseurl}}/assets/images/region-us.png)
 5. Go to the EC2 service's console (you can type EC2 in the Search box on top and then click on the EC2 service in the results)
 6. Click on the **Instances (running)** link under **Resources** to be taken to a list of running EC2 Instances.
-    1. !["instances1"](/instruction-images/instances1.png)
+    1. !["instances1"]({{site.baseurl}}/assets/images/instances1.png)
 7. In the **Find instance by attribute or tag** search box type **CLASS_ID-kraken-XX** (where CLASS_ID is your class ID and where XX is your attendee number at the end of your username) and press enter/return.
 8. Tick the box next to the jumpbox and then click the **Connect** button on top
-    1. !["instances2"](/instruction-images/instances2.png)
+    1. !["instances2"]({{site.baseurl}}/assets/images/instances2.png)
 9. Choose the **Session Manager** tab and then click the **Connect** button.
-    1. !["connect"](/instruction-images/connect.png)
+    1. !["connect"]({{site.baseurl}}/assets/images/connect.png)
     2. If you dont see the **Connect** button enabled you are probabbly trying to access some other attendee's jumpbox.
 10. Once your terminal window opens type:
 
@@ -63,6 +63,6 @@ You'll have received a login and password for Sysdig from the facilitator. To si
 
 1. Open a web browser and go to <https://sysdig.com>
 2. Under the Log In dropdown on the top right of the page choose ["YOUR_SYSDIG_ACCOUNT_REGION section"](#know-your-sysdig-region) (US-East, EU-Central, ...) under **Sysdig Secure** (NOTE: not Sysdig Monitor which we won't be looking at today)
-    1. !["sysdiglogin"](/instruction-images/sysdiglogin.png)
+    1. !["sysdiglogin"]({{site.baseurl}}/assets/images/sysdiglogin.png)
 3. Enter the email address and password you were provided for Sysdig and click the **Log in** button
 4. If you see the Customize your Sysdig experience screen, then click the **Get into Sysdig** button in the lower right hand corner to take you through to the **Home** screen

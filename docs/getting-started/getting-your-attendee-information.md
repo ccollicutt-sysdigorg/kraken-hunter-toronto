@@ -18,7 +18,7 @@ nav_order: 1
 
 ### Know your Sysdig region
 
-- !["sysdig-regions"](/instruction-images/sysdig-regions.png)
+- !["sysdig-regions"]({{site.baseurl}}/assets/images/sysdig-regions.png)
 - Depending on your class, your instructor will let you know which Sysdig region to use:
   - US West
   - EU

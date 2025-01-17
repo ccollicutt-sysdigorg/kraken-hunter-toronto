@@ -33,20 +33,20 @@ To explore this feature:
 2. Open the Sysdig tab in your browser
 3. Go to **Network** on the left
 4. Pick your EKS cluster as well as the Namespace **hello** and the type **Service**
-    1. !["network1"](/instruction-images/network1.png)
+    1. !["network1"]({{site.baseurl}}/assets/images/network1.png)
 5. In the right-hand pane we can see that the hello Namespace consists of:
     1. A backend that is made up of a service named hello-server and a deployment named **hello-server**
     2. Two frontend apps called **hello-server-client** and **hello-server-client-blocked** that talk to the **hello-server** backend service
     3. We can also see that our **security-playground** services were connecting to the backend as well (as there was a **curl** to do so in the exploit scripts we ran)
-    4. !["network2"](/instruction-images/network2.png)
+    4. !["network2"]({{site.baseurl}}/assets/images/network2.png)
 6. Click the **Ingress** tab
 7. Here you can untick anything we don't want talking to our hello-server service.
     1. Untick everything but **hello-server-client**
-    2. !["network3"](/instruction-images/network3.png)
+    2. !["network3"]({{site.baseurl}}/assets/images/network3.png)
 8. Click back to **Topology** and now you'll see the things we are going to block with red lines (with the only allowed/black path being to hello-server-client)
-    1. !["network4"](/instruction-images/network4.png)
+    1. !["network4"]({{site.baseurl}}/assets/images/network4.png)
 9. Click **Generated Policy** and copy all the contents to your clipboard
-    1. !["network5"](/instruction-images/network5.png)
+    1. !["network5"]({{site.baseurl}}/assets/images/network5.png)
 10. Go back to your jumpbox terminal browser tab
 11. Run the following:
 
@@ -94,19 +94,19 @@ Let's look at how this could help with our insecure security-playground example 
 
 1. Go back to the Sysdig browser tab
 2. In the **Network** section choose the **security-playground** namespace and the **Deployment** object type
-    1. !["network6"](/instruction-images/network6.png)
+    1. !["network6"]({{site.baseurl}}/assets/images/network6.png)
 3. Here you'll not only see the other side of the hello-server interaction (this deployment calling out to hello-server) - but also all the Internet IPs that it talked out to as we did our curls - to download apt packages and talk to the crypto miner pool etc.
 4. You can generate a NetworkPolicy excluding all that Internet egress like we did above - go to the **Egress** tab
     1. We actually default to excluding all IPs/CIDRs outside the cluster (that is why the lines are red):
         1. Untick the hello-server so that security-playground won't be able to egress to that
         2. Note that it shows not just the IPs we were talking to but the process name that was talking to them.
             1. If you wanted to allow these you can click the checkmark with a plus icon to the right of them - and click that again to remove (when it turns into a checkmark with a minus)
-    2. !["network7"](/instruction-images/network7.png)
+    2. !["network7"]({{site.baseurl}}/assets/images/network7.png)
     3. This is another control that would prevent many of the things we did with our curls at the start!
 5. Go to the Generated Policy tab
     1. Rather than use the Generated Policy as-is, we'll remove the Ingress line from the policyTypes so we can still reach the service first.
         1. Copy and paste this into a text editor and remove the Ingress lines and then copy that now Ingress-less policy to your clipboard
-    2. !["network8"](/instruction-images/network8.png)
+    2. !["network8"]({{site.baseurl}}/assets/images/network8.png)
 6. Go back to your jumpbox terminal browser tab
 7. Run the following:
 
