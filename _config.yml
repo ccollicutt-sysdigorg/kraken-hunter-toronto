@@ -6,3 +6,19 @@ title: Kraken Hunter
 description: Learn how to use Sysdig Secure
 
 # color_scheme: kraken
+
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red

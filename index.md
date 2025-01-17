@@ -1,9 +1,9 @@
 ---
-title: Sysdig Hands-on EKS Security Workshop
+title: Sysdig Hands-on Container and Cloud Security Workshop
 nav_order: 1
 ---
 
-# Sysdig Hands-on EKS Security Workshop
+# Sysdig Hands-on Container and Cloud Security Workshop
 
 Welcome to Sysdig's hands-on workshop. In this workshop, you'll experience some of the security challenges of Kubernetes/EKS first-hand - and how Sysdig can help.
 
