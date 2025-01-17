@@ -1,8 +1,11 @@
 ---
-title: Runtime Threat Detection in Workloads/Kubernetes
+title: Runtime Threat Detection in Kubernetes Workloads
 parent: Runtime Threat Detection
 nav_order: 2
 ---
+
+1. TOC
+{:toc}
 
 ## Runtime Threat Detection and Prevention (Workload/Kubernetes)
 
