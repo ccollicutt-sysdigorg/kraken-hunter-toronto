@@ -5,7 +5,7 @@ plugins:
 title: Kraken Hunter
 description: Learn how to use Sysdig Secure
 
-# color_scheme: kraken
+color_scheme: kraken
 
 callouts:
   highlight:
