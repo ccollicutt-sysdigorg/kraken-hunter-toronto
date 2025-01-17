@@ -1,4 +1,13 @@
-## Runtime Threat Detection and Prevention (Cloud/AWS)
+---
+title: Runtime Threat Detection in Amazon Web Services
+parent: Runtime Threat Detection
+nav_order: 1
+---
+
+1. TOC
+{:toc}
+
+## Runtime Threat Detection and Prevention in Cloud/AWS
 
 Sysdig's Runtime Threat Detection is not limited to your Linux Kernel Syscalls and Kubernetes Audit trail - it can also do agentless runtime threat detection against AWS CloudTrail (as well as Azure, GCP, Okta, Entra ID and GitHub - with more coming all the time)! When we say agentless, we mean that the Falco watching your CloudTrail is run by Sysdig in our SaaS backend for you. You optionally *could* run an agent in your account called the [Cloud Connector](https://docs.sysdig.com/en/docs/installation/sysdig-secure/connect-cloud-accounts/aws/agent-based-with-ciem/) as well - but most customers now prefer that Sysdig does this for them as-a-service without an agent.
 
@@ -14,11 +23,11 @@ But, Sysdig will detect the lack of MFA and alert you on it!
 
 2. There, select **AWS** under the **Event Source** filter.
 
-!["cloudtrail-detection"](../instruction-images/aws-no-mfa-alert.png)
+!["cloudtrail-detection"](/instruction-images/aws-no-mfa-alert.png)
 
 3. In the **Events Feed** pane, you'll see a couple of AWS Cloudtrail alerts. One is for the SSM session where you logged in to your bastion host, and the other is for a login with no MFA.
 
-!["cloudtrail-detection-2"](../instruction-images/aws-no-mfa-alert2.png)
+!["cloudtrail-detection-2"](/instruction-images/aws-no-mfa-alert2.png)
 
 ### Section 2 - AWS IAM Roles for Service Accounts (IRSA)
 
@@ -101,12 +110,12 @@ and this time they will work!
 
 #### The Sysdig Detections
 
-On the host side you'll see many **Drift Detections** which will include the commands being run against AWS - and which we could have blocked rather than just detected with Container Drift. This is a good reason to not include CLIs like the AWS one in your images as well! !["s3drift"](../instruction-images/s3drift.png)
+On the host side you'll see many **Drift Detections** which will include the commands being run against AWS - and which we could have blocked rather than just detected with Container Drift. This is a good reason to not include CLIs like the AWS one in your images as well! !["s3drift"](/instruction-images/s3drift.png)
 
 But on the AWS API side (go to Threats -> Cloud Activity) you'll see that the protections against this bucket being made public were removed as well as the new Bucket Policy (making them public) were subsequently applied as well!
 
-!["s3cloudevents"](../instruction-images/s3cloudevents.png)
-!["s3cloudevents2"](../instruction-images/s3cloudevents2.png)
+!["s3cloudevents"](/instruction-images/s3cloudevents.png)
+!["s3cloudevents2"](/instruction-images/s3cloudevents2.png)
 
 > **NOTE**: As this is all within one region of one AWS account you'll see that, unlike the Kubernetes events, you'll see the events for the other attendees as well. While we do offer a filter based on AWS Tags (in addition to AWS account and region), unfortunately CloudTrail doesn't include the Tags of the resource(s) involved in the trail - and so it isn't currently possible to filter these down with enough granularity where you can only see your own Events. The AWS Tag filter does apply to Inventory/Compliance though.
 
