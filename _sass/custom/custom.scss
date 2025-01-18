@@ -1,0 +1,20 @@
+/* Set base font size */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 16px;
+}
+
+li {
+  font-size: 16px;
+}
+
+@media (min-width: 50rem) and (min-width: 31.25rem) {
+  .nav-list .nav-list-item {
+    font-size: 16px !important;
+  }
+}
+
+

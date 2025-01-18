@@ -5,6 +5,8 @@ plugins:
 title: Kraken Hunter
 description: Learn how to use Sysdig Secure
 
+logo: /assets/logo/sysdig.png
+
 color_scheme: kraken
 
 callouts:

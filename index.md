@@ -1,9 +1,9 @@
 ---
-title: Sysdig Hands-on Container and Cloud Security Workshop
+title: Sysdig Kraken Hunter
 nav_order: 1
 ---
 
-# Sysdig Hands-on Container and Cloud Security Workshop
+# Sysdig Kraken Hunter - Hands-on Container and Cloud Security Workshop
 
 Welcome to Sysdig's hands-on workshop. In this workshop, you'll experience some of the security challenges of Kubernetes/EKS first-hand - and how Sysdig can help.
 
