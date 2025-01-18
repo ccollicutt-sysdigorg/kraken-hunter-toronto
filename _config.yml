@@ -10,6 +10,9 @@ logo: /assets/logo/sysdig.png
 color_scheme: kraken
 
 callouts:
+  goal:
+    color: sysdig-green
+    opacity: 1.0
   highlight:
     color: warning-orange
   important:

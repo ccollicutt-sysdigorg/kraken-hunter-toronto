@@ -4,6 +4,8 @@ parent: Runtime Threat Detection in Cloud
 nav_order: 1
 ---
 
+{: .goal }
+> **Goal:** At the end of this module, you will understand that Sysdig can detect threats not only in hosts, but also in cloud environments, by analyzing CloudTrail logs and performing real-time analysis.
 
 ## CloudTrail Detections
 
