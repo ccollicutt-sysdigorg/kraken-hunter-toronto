@@ -4,6 +4,9 @@ parent: Getting Started
 nav_order: 2
 ---
 
+1. TOC
+{:toc}
+
 ## Accessing your AWS environment
 
 You'll have received your IAM username and password from the facilitator. This environment consists of:

@@ -5,8 +5,15 @@ nav_order: 1
 
 # Sysdig Kraken Hunter - Hands-on Container and Cloud Security Workshop
 
-Welcome to Sysdig's hands-on workshop. In this workshop, you'll experience some of the security challenges of Kubernetes/EKS first-hand - and how Sysdig can help.
+Welcome to Sysdig's hands-on workshop. In this workshop, you'll experience some of the security challenges of Kubernetes/EKS first-hand--and how Sysdig can help.
 
-We have provisioned a separate EKS cluster and EC2 instance (to serve as a jumpbox/bastion) for each of you. You'll connect to that jumpbox via AWS SSM Session Manager in your browser - and it is preloaded with all the tools that you'll need to interact with your EKS cluster and work through today's labs.
+At the completion of this workshop, you will will have:
 
-We have also provisioned a user for you within Sysdig Secure. While this Sysdig SaaS tenancy is shared between everyone in the workshop today, your login is tied to a team within it which, in turn, is filtered (via a Zone) to only show you information about your EKS cluster/environment.
+- Learned how to use Sysdig Secure to detect and prevent threats in your Kubernetes and AWS environments
+- Gained a deeper understanding of the security challenges of Kubernetes/EKS
+- Seen how Sysdig Secure can help you prioritize and remediate threats
+- Discovered the value of Sysdig Secure through hands-on use
+
+The first step is to [get started!](docs/getting-started/index.md)
+
+

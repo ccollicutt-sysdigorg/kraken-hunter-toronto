@@ -1,5 +1,5 @@
 ---
-title: AWS IAM Roles for Service Accounts (IRSA)
+title: AWS IAM Roles for Service Accounts
 parent: Runtime Threat Detection in Cloud
 nav_order: 2
 ---
@@ -7,7 +7,7 @@ nav_order: 2
 1. TOC
 {:toc}
 
-## AWS IAM Roles for Service Accounts (IRSA)
+## AWS IAM Roles for Service Accounts
 
 AWS EKS has a mechanism for giving Pod's access to the AWS APIs called [IAM Roles for Service Accounts (IRSA)](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html). In short, this binds a particular service account in Kubernetes to an IAM Role in AWS - and will automatically mount credentials for using that AWS IAM role into any Pods that use that Kubernetes service account at runtime.
 
@@ -95,7 +95,8 @@ But on the AWS API side (go to Threats -> Cloud Activity) you'll see that the pr
 !["s3cloudevents"]({{site.baseurl}}/assets/images/s3cloudevents.png)
 !["s3cloudevents2"]({{site.baseurl}}/assets/images/s3cloudevents2.png)
 
-> **NOTE**: As this is all within one region of one AWS account you'll see that, unlike the Kubernetes events, you'll see the events for the other attendees as well. While we do offer a filter based on AWS Tags (in addition to AWS account and region), unfortunately CloudTrail doesn't include the Tags of the resource(s) involved in the trail - and so it isn't currently possible to filter these down with enough granularity where you can only see your own Events. The AWS Tag filter does apply to Inventory/Compliance though.
+{: .highlight }
+> As this is all within one region of one AWS account you'll see that, unlike the Kubernetes events, you'll see the events for the other attendees as well. While we do offer a filter based on AWS Tags (in addition to AWS account and region), unfortunately CloudTrail doesn't include the Tags of the resource(s) involved in the trail - and so it isn't currently possible to filter these down with enough granularity where you can only see your own Events. The AWS Tag filter does apply to Inventory/Compliance though.
 
 ### How to prevent this attack / fix this workload
 
