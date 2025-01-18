@@ -50,7 +50,10 @@ To sign into your environment:
     ```
 
     - As all of our workshop content is pre-installed in the root user's home directory
-    - **NOTE:** if you close and re-open the Session Manager Session/Terminal window then you'll need to rerun those two commands to return to the root user and its home directory.
+
+{: .important }
+> If you close and re-open the Session Manager Session/Terminal window then you'll need to rerun those two commands to return to the root user and its home directory.
+
 11. Type:
 
     ```bash

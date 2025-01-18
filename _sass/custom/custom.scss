@@ -126,3 +126,37 @@ li {
   }
   
 
+.kraken-logo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background-image: url('/assets/logo/kraken.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+}
+
+.kraken-decoration {
+  display: none; // Hidden by default on mobile
+}
+
+// Only show on larger screens
+@media (min-width: 50rem) {
+  .kraken-decoration {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background-image: url('/assets/logo/kraken.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 90;
+  }
+}
+
