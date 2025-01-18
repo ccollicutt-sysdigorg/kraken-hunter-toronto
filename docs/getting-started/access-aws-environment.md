@@ -18,10 +18,12 @@ You'll have received your IAM username and password from the facilitator. This e
 - An S3 bucket (which you'll be using to exfiltrate some data in the workshop)
 !["diagram2"]({{site.baseurl}}/assets/images/diagram2.png)
 
-To sign into your environment:
+### Signing into your environment
 
 {: .important }
 >Your AWS user is restricted to only be able to access the resources that you need access to in order to complete the workshop. You will see many warnings around lack of permissions, but this is OK as you will still be able to complete the workshop.
+
+To sign into your environment:
 
 1. Open a web browser and go to <https://aws.amazon.com/console/>
 2. If prompted, choose to sign in with an IAM user (as opposed to the Root user) and enter the AWS Account ID of ["YOUR_AWS_ACCOUNT_ID section"](#know-your-aws-region-and-account)
@@ -54,4 +56,5 @@ To sign into your environment:
 
     You'll see a list of all the running Pods in your EKS cluster.
 
-> **NOTE**: Even though we will refer you to a few example files on GitHub throughout the workshop, everything you need to run has already been pre-installed onto the jumpbox in `/root`. You don't need to copy/paste or `git clone` anything from GitHub today.
+{: .note }
+>Even though we will refer you to a few example files on GitHub throughout the workshop, everything you need to run has already been pre-installed onto the jumpbox in `/root`. You don't need to copy/paste or `git clone` anything from GitHub today.

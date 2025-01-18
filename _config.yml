@@ -11,19 +11,19 @@ color_scheme: kraken
 
 callouts:
   highlight:
-    color: yellow
+    color: warning-orange
   important:
     title: Important
-    color: blue
+    color: falco-blue
   new:
     title: New
-    color: green
+    color: violet
   note:
     title: Note
-    color: purple
+    color: violet
   warning:
     title: Warning
-    color: red
+    color: risk-red-orange
 
 back_to_top: true
 back_to_top_text: "Back to top"
