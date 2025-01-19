@@ -17,6 +17,9 @@ callouts:
     color: warning-orange
   important:
     title: Important
+    color: warning-orange
+  value:
+    title: Value
     color: falco-blue
   new:
     title: New

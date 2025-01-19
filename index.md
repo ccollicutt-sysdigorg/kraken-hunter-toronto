@@ -5,20 +5,16 @@ nav_order: 1
 
 # Sysdig Kraken Hunter - Hands-on Container and Cloud Security Workshop
 
-Welcome to Sysdig's hands-on workshop. In this workshop, you'll experience some of the security challenges of Kubernetes/EKS first-hand--and how Sysdig can help.
+Welcome to Sysdig's instructor-led hands-on workshop. In this workshop, you'll experience some of the security challenges of clouds and workloads first-hand--and where Sysdig can provide value.
 
-{: .highlight }
-> This workshop requires access to certain pre-configured infrastructure and Sysdig products, and as such can only be run as part of a Sydig engagement.
-
-## What You Will Learn
-
-At the completion of this workshop, you will will have:
-
-- Learned how to use Sysdig Secure to detect and prevent threats in your Kubernetes and AWS environments
-- Gained a deeper understanding of the security challenges of Kubernetes/EKS
-- Seen how Sysdig Secure can help you prioritize and remediate threats
-- Discovered the value of Sysdig Secure through hands-on use
-
-The first step is to [get started!](docs/getting-started/index.md)
-
+{: .value }
+> At the completion of this workshop, you will will have:
+>
+> - Learned how to use Sysdig Secure to detect and prevent threats in your cloud, container, hosts, and other workloads
+> - Gained a deeper understanding of the security challenges of today's clouds and workloads
+> - Seen how Sysdig Secure can help you prioritize and remediate threats and vulnerabilities
+> - Discovered the value of Sysdig Secure through direct hands-on use
+> - Run real-world attacker simulations and observed how they work
+> - Obtained the Kraken Hunter certification
+> - And more!
 

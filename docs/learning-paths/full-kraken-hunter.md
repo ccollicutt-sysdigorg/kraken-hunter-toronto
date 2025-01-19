@@ -15,7 +15,7 @@ In this learning path, you will learn how to use Sysdig to detect and prevent th
 2. [Runtime Threat Detection](/docs/modules/runtime-threat-detection/)
     1. [Runtime Threat Detection - Cloud](/docs/modules/runtime-threat-detection/runtime-threat-detection-cloud/)
         1. [CloudTrail Detections](/docs/modules/runtime-threat-detection/runtime-threat-detection-cloud/cloudtrail-detections.html)
-        2. [Overpermissioned EKS Workloads Running in AWS](/docs/modules/runtime-threat-detection/runtime-threat-detection-cloud/eks-iam-roles-and-irsa.html)
+        2. [Exploiting Overpermissioned EKS Workloads](/docs/modules/runtime-threat-detection/runtime-threat-detection-cloud/eks-iam-roles-and-irsa.html)
     2. [Runtime Threat Detection - Workload](/docs/modules/runtime-threat-detection/runtime-threat-detection-workload.html)
 3. [Vulnerability Management](/docs/modules/vulnerability-management/)
 5. [Risks and the Sysdig Attack Path](/docs/modules/risks-and-attack-path/)

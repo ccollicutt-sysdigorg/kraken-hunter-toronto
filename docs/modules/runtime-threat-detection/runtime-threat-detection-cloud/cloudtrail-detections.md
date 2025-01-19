@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 {: .goal }
-> **Goal:** At the end of this module, you will understand that Sysdig can detect threats not only in hosts, but also in cloud environments, by analyzing CloudTrail logs and performing real-time analysis.
+> At the end of this module, you will understand that Sysdig can detect threats not only in hosts, but also in cloud environments, by analyzing CloudTrail logs and performing real-time analysis.
 
 
 ## CloudTrail Detections
@@ -25,3 +25,6 @@ In the **Events Feed** pane, you'll see a couple of AWS Cloudtrail alerts. One i
 !["cloudtrail-detection-2"]({{site.baseurl}}/assets/images/aws-no-mfa-alert2.png)
 
 Sysdig will also alert you on the lack of MFA in the login event, as well as the fact that an SSM session was used to log in.
+
+{: .value }
+> Organizations often have little visibility into what their cloud environments are doing, what permissions they have and what actions are being taken with those resources. Sysdig can provide visibility and threat detection capabilities to your cloud infrastructure.
