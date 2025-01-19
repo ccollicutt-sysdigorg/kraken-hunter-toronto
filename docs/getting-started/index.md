@@ -1,15 +1,14 @@
 ---
 title: Getting Started
-nav_order: 2
+nav_order: 3
 ---
 
-## Welcome to the Kraken Hunter workshop!
+{: .goal }
+> **Goal:** At the completion of this section, you will have 1) access to your cloud environment and 2) access to your Sysdig Secure account.
 
-This workshop is designed to help you learn how to use Sysdig Secure to detect and prevent threats in your Kubernetes and AWS environments.
+## Getting Started with Your Kraken Hunter Workshop
 
-We have provisioned a separate EKS cluster and EC2 instance (to serve as a jumpbox/bastion) for each of you. You'll connect to that jumpbox via AWS SSM Session Manager in your browser - and it is preloaded with all the tools that you'll need to interact with your EKS cluster and work through today's labs.
-
-We have also provisioned a user for you within Sysdig Secure. While this Sysdig SaaS tenancy is shared between everyone in the workshop today, your login is tied to a team within it which, in turn, is filtered (via a Zone) to only show you information about your EKS cluster/environment.
+We have provisioned cloud resources and accounts for you, as well as a Sysdig Secure account. In the following sections, you'll learn how to access your cloud environment and Sysdig Secure account.
 
 {: .note}
 > Once you have access to your Sysdig and Cloud environments, you'll be ready to start on the [modules](/docs/modules/)!

@@ -1,13 +1,19 @@
 ---
-title: AWS IAM Roles for Service Accounts
+title: Exploiting Overpermissioned EKS Workloads
 parent: Runtime Threat Detection in Cloud
 nav_order: 2
 ---
 
+{: .goal }
+> **Goal:** Cloud use is complicated, especially now that workloads can have their own identity and permissions. We have to use tools to understand exactly what permissions workloads have, and what they are doing with them.
+>
+>At the completion of this module, you will gain an understanding of how EKS workloads can be overpermissioned with IAM Roles for Service Accounts (IRSA), how that can affect your security posture, and how to detect and prevent this with Sysdig.
+
+
 1. TOC
 {:toc}
 
-## AWS IAM Roles for Service Accounts
+## Exploiting Overpermissioned EKS Workloads
 
 AWS EKS has a mechanism for giving Pod's access to the AWS APIs called [IAM Roles for Service Accounts (IRSA)](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html). In short, this binds a particular service account in Kubernetes to an IAM Role in AWS - and will automatically mount credentials for using that AWS IAM role into any Pods that use that Kubernetes service account at runtime.
 

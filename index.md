@@ -7,6 +7,11 @@ nav_order: 1
 
 Welcome to Sysdig's hands-on workshop. In this workshop, you'll experience some of the security challenges of Kubernetes/EKS first-hand--and how Sysdig can help.
 
+{: .highlight }
+> This workshop requires access to certain pre-configured infrastructure and Sysdig products, and as such can only be run as part of a Sydig engagement.
+
+## What You Will Learn
+
 At the completion of this workshop, you will will have:
 
 - Learned how to use Sysdig Secure to detect and prevent threats in your Kubernetes and AWS environments
