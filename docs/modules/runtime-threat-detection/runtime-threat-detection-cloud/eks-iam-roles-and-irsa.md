@@ -115,7 +115,7 @@ As well, enforcing Container Drift with Sysdig so attacker tools and usefull uti
 
 ## Completed
 
-You have now completed the Exploiting Overpermissioned EKS Workloads module.
+You have now completed the Exploiting Overpermissioned EKS Workloads section of this module.
 
 {: .value }
 > - Many workloads will run in a cloud based Kubernetes environment and will have their own identity and permissions. This solves some problems around the use of API keys and other credentials, but it also introduces new security risks.

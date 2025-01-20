@@ -7,7 +7,6 @@ nav_order: 1
 {: .goal }
 > At the end of this module, you will understand that Sysdig can detect threats not only in hosts, but also in cloud environments, by analyzing CloudTrail logs and performing real-time analysis.
 
-
 ## CloudTrail Detections
 
 At this point, you have logged in to AWS with your workshop user. However, you may have noticed that you are not using Multi-Factor Authentication (MFA) to do so. In the real world, you should always use MFA to log in to your AWS account, but in this workshop you don't, simply for ease of use.
@@ -28,7 +27,7 @@ Sysdig will also alert you on the lack of MFA in the login event, as well as the
 
 ## Completed
 
-You have now completed the CloudTrail detections module.
+You have now completed the CloudTrail detections sections of this module.
 
 {: .value }
 > Organizations often have little visibility into what their cloud environments are doing, what permissions they have and what actions are being taken with those resources. Sysdig can provide visibility and threat detection capabilities to your cloud infrastructure.

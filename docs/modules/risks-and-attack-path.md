@@ -42,4 +42,4 @@ You have now completed the Risks and Attack Path module.
 
 {: .value}
 > - You have now used Sysdig Secure to understand the biggest risks in your environment.
-> - With this infomration, you can get the best returon on investment in terms of what to fix first.
+> - With this information, you can get the best return on investment in terms of what to fix first.
