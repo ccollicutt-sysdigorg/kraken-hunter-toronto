@@ -13,6 +13,6 @@ Kubernetes is a complex system that can be difficult to configure, use, and secu
 
 1. [Getting Started]({{site.baseurl}}/docs/getting-started/)
 2. [Exploiting Overpermissioned EKS Workloads]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-cloud/eks-iam-roles-and-irsa.html)
-3. [Runtime Threat Detection - Workload]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-kubernetes/index.html)
+3. [Runtime Threat Detection in Kubernetes]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-kubernetes/index.html)
 4. [Kubernetes Posture Management]({{site.baseurl}}/docs/modules/kubernetes-posture-management.html)
 5. [Kubernetes Network Policies]({{site.baseurl}}/docs/modules/kubernetes-network-policies.html)

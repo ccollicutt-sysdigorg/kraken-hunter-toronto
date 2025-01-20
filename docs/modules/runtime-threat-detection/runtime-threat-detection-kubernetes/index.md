@@ -9,9 +9,9 @@ nav_order: 2
 >
 > Please note that this is an in-depth, hands-on module. It goes into much detail around not only using Sysdig Secure, but also how to secure Kubernetes workloads.
 >
-> There are three sections to this module:
+> There are a few sections to this module:
 >
-> 1. How Sysdig Detects Runtime Threats
+> 1. How Sysdig Detects Runtime Threats (the current section)
 > 2. Simulating an Attack on a Kubernetes Workload
 > 3. Securing the Workload
 > 4. Conclusion
