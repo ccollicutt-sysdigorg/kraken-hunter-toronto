@@ -4,7 +4,9 @@ nav_order: 3
 ---
 
 {: .goal }
->At the completion of this section, you will have 1) access to your cloud environment and 2) access to your Sysdig Secure account.
+>At the completion of this section, you will have access to your:
+> 1. Cloud environment
+> 2. Sysdig Secure account
 
 ## Getting Started with Your Kraken Hunter Workshop
 

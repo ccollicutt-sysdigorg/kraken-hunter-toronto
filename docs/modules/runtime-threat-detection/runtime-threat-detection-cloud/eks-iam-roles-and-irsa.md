@@ -5,10 +5,9 @@ nav_order: 2
 ---
 
 {: .goal }
-> **Goal:** Cloud use is complicated, especially now that workloads can have their own identity and permissions. We have to use tools to understand exactly what permissions workloads have, and what they are doing with them.
+> Cloud use is complicated, especially now that workloads can have their own identity and permissions. In order to secure our workloads, we have to use tools to understand exactly what permissions they have, and what they, **and attackers**, are doing with them.
 >
 >At the completion of this module, you will gain an understanding of how EKS workloads can be overpermissioned with IAM Roles for Service Accounts (IRSA), how that can affect your security posture, and how to detect and prevent this with Sysdig.
-
 
 1. TOC
 {:toc}
@@ -101,16 +100,26 @@ But on the AWS API side (go to Threats -> Cloud Activity) you'll see that the pr
 !["s3cloudevents"]({{site.baseurl}}/assets/images/s3cloudevents.png)
 !["s3cloudevents2"]({{site.baseurl}}/assets/images/s3cloudevents2.png)
 
-{: .highlight }
-> As this is all within one region of one AWS account you'll see that, unlike the Kubernetes events, you'll see the events for the other attendees as well. While we do offer a filter based on AWS Tags (in addition to AWS account and region), unfortunately CloudTrail doesn't include the Tags of the resource(s) involved in the trail - and so it isn't currently possible to filter these down with enough granularity where you can only see your own Events. The AWS Tag filter does apply to Inventory/Compliance though.
+{: .note }
+> As this is all within one region of one AWS account you'll see that, unlike the Kubernetes events, you'll see the events for the other attendees as well.
 
-### How to prevent this attack / fix this workload
+### How to Prevent This Attack and Fix This Workload
 
-This IRSA example could have been prevented with:
+This IRSA example could have been prevented by being more granular and least-privilege with your IRSA's policy to not use `s3*` and therefore allow the removal of public blocks or applying Bucket Policies (just reading/writing files etc.)
 
-- Being more granular and least-privilege with your IRSA's policy to not use `s3*` and therefore allow the removal of public blocks or applying Bucket Policies (just reading/writing files etc.)
-  - This is where things like [Permission Boundaries](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) and [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) can be helpful too in ensuring that Roles don't get created that are this over-privileged.
-  - !["EffectivePermissions-scp-boundary-id"](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/EffectivePermissions-scp-boundary-id.png)
-- Enforcing Container Drift with Sysdig so the AWS CLI isn't able to be downloaded/run at runtime (as long as you also ensure it also isn't in your images)
+This is where things like [Permission Boundaries](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) and [Service Control Policies (SCPs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html) can be helpful too in ensuring that Roles don't get created that are this over-privileged.
 
-Either would have prevented it in our example but, ideally, you'd do both things - for extra protection!
+!["EffectivePermissions-scp-boundary-id"](https://docs.aws.amazon.com/images/IAM/latest/UserGuide/images/EffectivePermissions-scp-boundary-id.png)
+
+As well, enforcing Container Drift with Sysdig so attacker tools and usefull utilities like the AWS CLI aren't able to be downloaded/run at runtime.
+
+## Completed
+
+You have now completed the Exploiting Overpermissioned EKS Workloads module.
+
+{: .value }
+> Many workloads will run in a cloud based Kubernetes environment and will have their own identity and permissions. This solves some problems around the use of API keys and other credentials, but it also introduces new security risks.
+>
+> Sysdig can help you detect and prevent these risks by providing visibility into the permissions and actions that workloads are taking with their workload identities.
+>
+> No matter how well we configure our applications, at some point a malicious actor will find a way to exploit them. Sysdig can help you detect and prevent these exploits by providing visibility into the actions that workloads are taking with their workload identities.

@@ -26,5 +26,9 @@ In the **Events Feed** pane, you'll see a couple of AWS Cloudtrail alerts. One i
 
 Sysdig will also alert you on the lack of MFA in the login event, as well as the fact that an SSM session was used to log in.
 
+## Completed
+
+You have now completed the CloudTrail detections module.
+
 {: .value }
 > Organizations often have little visibility into what their cloud environments are doing, what permissions they have and what actions are being taken with those resources. Sysdig can provide visibility and threat detection capabilities to your cloud infrastructure.
