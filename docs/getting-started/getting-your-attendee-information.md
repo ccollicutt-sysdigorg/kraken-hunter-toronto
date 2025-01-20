@@ -1,5 +1,5 @@
 ---
-title: Getting your attendee information
+title: Getting Your Attendee Information
 parent: Getting Started
 nav_order: 1
 ---
@@ -9,7 +9,7 @@ nav_order: 1
 {: .goal }
 > This section will help you get your attendee information and credentials to access your AWS and Sysdig accounts. By the end of this section you will have the all the required information to access your AWS and Sysdig accounts.
 
-### Get your attendees credentials
+## Get Your Attendee Information
 
 Your instructor will provide you with access to a Google spreadsheet with some credentials to the AWS console and to access your demo Sysdig account.
 
@@ -24,7 +24,12 @@ This spreadsheet will have the following information:
 - Your AWS region
 - Your Sysdig region
 
-### Know your Sysdig region
+## Know Your Sysdig Region
+
+Sysdig operates several regions around the world, each independent of each other, so it's important to know which region to login to. 
+
+{: .note }
+> Most often, if you are taking the workshop in North America, you will use the US West region. If you are taking the workshop in Europe, you will use the EU region. If you are taking the workshop in Asia-Pacific, you will use the AP region.
 
 !["sysdig-regions"]({{site.baseurl}}/assets/images/sysdig-regions.png)
 
@@ -34,14 +39,17 @@ Depending on your class, your instructor will let you know which Sysdig region t
   - EU
   - AP
 
-### Know your AWS region and account
+## Know Your AWS Region and Account
 
-Depending on your class, your instructor will let you know which AWS region to use:
+{: .note }
+> Most often, if you are taking the workshop in North America, you will use the US West region. If you are taking the workshop in Europe, you will use the EU region. If you are taking the workshop in Asia-Pacific, you will use the AP region.
+
+Depending on your class, your instructor will let you know which AWS region to use.
 
   - sysdig-kraken-hunter-us (905418274209) -> us-west-1
   - sysdig-kraken-hunter-eu (339712937206) -> eu-central-1
   - sysdig-kraken-hunter-ap (381492038270) -> ap-southeast-2
 
-### Completed
+## Completed
 
 You have now completed the getting your attendee information section and have the credentials and other information you need to access your AWS and Sysdig accounts.
