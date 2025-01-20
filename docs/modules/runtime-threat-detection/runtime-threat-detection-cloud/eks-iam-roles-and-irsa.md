@@ -67,7 +67,7 @@ You'll also note that, if you look at the trust relationships of the IAM Role in
 }
 ```
 
-### The Exploit
+## The Exploit
 
 If we install the AWS CLI into our container at runtime and run some commands we'll see if our Pod has been assigned an IRSA role and they succeed. There is an **02-01-example-curls-bucket-public.sh** file in `/root` - have a look at it
 
@@ -91,7 +91,7 @@ to apply that change. Now re-run:
 
 and this time they will work!
 
-### The Sysdig Detections
+## The Sysdig Detections
 
 On the host side you'll see many **Drift Detections** which will include the commands being run against AWS - and which we could have blocked rather than just detected with Container Drift. This is a good reason to not include CLIs like the AWS one in your images as well! !["s3drift"]({{site.baseurl}}/assets/images/s3drift.png)
 
@@ -103,7 +103,7 @@ But on the AWS API side (go to Threats -> Cloud Activity) you'll see that the pr
 {: .note }
 > As this is all within one region of one AWS account you'll see that, unlike the Kubernetes events, you'll see the events for the other attendees as well.
 
-### How to Prevent This Attack and Fix This Workload
+## How to Prevent This Attack and Fix This Workload
 
 This IRSA example could have been prevented by being more granular and least-privilege with your IRSA's policy to not use `s3*` and therefore allow the removal of public blocks or applying Bucket Policies (just reading/writing files etc.)
 
@@ -118,8 +118,6 @@ As well, enforcing Container Drift with Sysdig so attacker tools and usefull uti
 You have now completed the Exploiting Overpermissioned EKS Workloads module.
 
 {: .value }
-> Many workloads will run in a cloud based Kubernetes environment and will have their own identity and permissions. This solves some problems around the use of API keys and other credentials, but it also introduces new security risks.
->
-> Sysdig can help you detect and prevent these risks by providing visibility into the permissions and actions that workloads are taking with their workload identities.
->
-> No matter how well we configure our applications, at some point a malicious actor will find a way to exploit them. Sysdig can help you detect and prevent these exploits by providing visibility into the actions that workloads are taking with their workload identities.
+> - Many workloads will run in a cloud based Kubernetes environment and will have their own identity and permissions. This solves some problems around the use of API keys and other credentials, but it also introduces new security risks.
+> - Sysdig can help you detect and prevent these risks by providing visibility into the permissions and actions that workloads are taking with their workload identities.
+> - No matter how well we configure our applications, at some point a malicious actor will find a way to exploit them. Sysdig can help you detect and prevent these exploits by providing visibility into the actions that workloads are taking with their workload identities.

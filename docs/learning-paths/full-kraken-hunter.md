@@ -18,6 +18,8 @@ In this learning path, you will learn how to use Sysdig to detect and prevent th
         2. [Exploiting Overpermissioned EKS Workloads]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-cloud/eks-iam-roles-and-irsa.html)
     2. [Runtime Threat Detection - Workload]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-workload.html)
 3. [Vulnerability Management]({{site.baseurl}}/docs/modules/vulnerability-management/)
+    1. [Pipeline Vulnerability Scanning]({{site.baseurl}}/docs/modules/vulnerability-management/pipeline.html)
+    2. [Runtime Vulnerability Scanning]({{site.baseurl}}/docs/modules/vulnerability-management/runtime.html)
 5. [Risks and the Sysdig Attack Path]({{site.baseurl}}/docs/modules/risks-and-attack-path/)
 6. [Kubernetes Posture Management]({{site.baseurl}}/docs/modules/kubernetes-posture-management.html)
 7. OPTIONAL - [Kubernetes Network Policies]({{site.baseurl}}/docs/modules/kubernetes-network-policies.html)
