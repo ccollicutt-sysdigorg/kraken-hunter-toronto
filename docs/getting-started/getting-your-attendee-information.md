@@ -17,12 +17,13 @@ Your instructor will provide you with access to a Google spreadsheet with some c
 
 This spreadsheet will have the following information:
 
-- Your Sysdig email login
-- Your Sysdig password
-- Your AWS console login
-- Your AWS console password
-- Your AWS region
-- Your Sysdig region
+| Information | Description |
+|------------|-------------|
+| Sysdig email login | Your email address for logging into Sysdig |
+| Password | Your password for logging into Sysdig and AWS |
+| AWS console login | Your login for accessing the AWS console |
+| AWS region | The AWS region you'll be working in |
+| Sysdig region | The Sysdig region you'll be working in |
 
 ## Know Your Sysdig Region
 
@@ -35,9 +36,11 @@ Sysdig operates several regions around the world, each independent of each other
 
 Depending on your class, your instructor will let you know which Sysdig region to use:
 
-  - US West
-  - EU
-  - AP
+  | Region |
+  |--------|
+  | US West |
+  | EU |
+  | AP |
 
 ## Know Your AWS Region and Account
 
@@ -46,9 +49,11 @@ Depending on your class, your instructor will let you know which Sysdig region t
 
 Depending on your class, your instructor will let you know which AWS region to use.
 
-  - sysdig-kraken-hunter-us (905418274209) -> us-west-1
-  - sysdig-kraken-hunter-eu (339712937206) -> eu-central-1
-  - sysdig-kraken-hunter-ap (381492038270) -> ap-southeast-2
+  | Account Name | Account ID | Region |
+  |--------------|------------|--------|
+  | sysdig-kraken-hunter-us | 905418274209 | us-west-1 |
+  | sysdig-kraken-hunter-eu | 339712937206 | eu-central-1 |
+  | sysdig-kraken-hunter-ap | 381492038270 | ap-southeast-2 |
 
 ## Completed
 

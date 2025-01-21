@@ -1,5 +1,5 @@
 ---
-title: Accessing your Sysdig environment
+title: Accessing Your Sysdig Environment
 parent: Getting Started
 nav_order: 2
 ---
@@ -7,7 +7,7 @@ nav_order: 2
 {: .goal }
 >At the completion of this section, you will have access to your Sysdig Secure account and are able to login to Sysdig Secure and see the Sysdig Secure dashboard.
 
-## Accessing your Sysdig environment
+## Accessing Your Sysdig Environment
 
 You'll have received a login and password for Sysdig from the facilitator. To sign into your environment.
 
@@ -22,7 +22,7 @@ Under the Log In dropdown on the top right of the page choose the region you wer
 
 Enter the email address and password you were provided for Sysdig and click the **Log in** button.
 
-{: .note }
+{: .highlight }
 If you see the Customize your Sysdig experience screen, then click the **Get into Sysdig** button in the lower right hand corner to take you through to the **Home** screen.
 
 

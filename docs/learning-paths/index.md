@@ -4,4 +4,4 @@ nav_order: 2
 ---
 
 {: .goal }
-> **About:** This section shows collections of modules that are grouped by a common theme.
+> The learning path section shows collections of modules that are grouped by a common theme.

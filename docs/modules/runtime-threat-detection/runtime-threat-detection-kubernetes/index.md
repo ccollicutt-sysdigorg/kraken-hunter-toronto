@@ -54,6 +54,9 @@ You have completed this section of the module.
 
 From here you can continue to the [Simulating an Attack]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-kubernetes/the-attack.html) section.
 
+[Next Section ➜ Simulating an Attack]({{site.baseurl}}/docs/modules/runtime-threat-detection/runtime-threat-detection-kubernetes/the-attack.html){: .btn }
+
+
 {: .value }
 > Sysdig's runtime threat detection capabilities deliver essential business value by:
 > - Using a rules-based approach to detect and prevent common attack patterns in real-time
