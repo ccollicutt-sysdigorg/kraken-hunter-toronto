@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Posture Management
-parent: Modules
-nav_order: 6
+parent: Kubernetes
+nav_order: 1
 ---
 
 {: .goal}

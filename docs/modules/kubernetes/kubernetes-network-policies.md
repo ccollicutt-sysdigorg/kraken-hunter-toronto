@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Network Policies
-parent: Modules
-nav_order: 7
+parent: Kubernetes
+nav_order: 2
 ---
 
 {: .goal}

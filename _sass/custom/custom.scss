@@ -127,11 +127,11 @@ li {
   
 
 .kraken-decoration {
-  display: none; // Hidden by default on mobile
+  display: none; // Hidden by default
 }
 
-// Only show on larger screens
-@media (min-width: 50rem) {
+// Only show on extra wide screens
+@media (min-width: 1800px) {
   .kraken-decoration {
     display: block;
     position: fixed;

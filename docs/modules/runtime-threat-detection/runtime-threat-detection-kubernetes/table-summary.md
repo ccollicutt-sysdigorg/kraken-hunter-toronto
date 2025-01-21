@@ -10,7 +10,7 @@ nav_order: 4
 ## Table Summary
 
 {: .note }
-> There is nothing to completed in this section. It's simply a table summary of the solutions we covered in this Kubernetes security workload module and provides a way to review what we have covered and possible solutions.
+> There is nothing to complete in this section. It's simply a table summary of the solutions we covered in this Kubernetes security workload module and provides a way to review what we have covered and possible solutions.
 
 |Exploit in the example-curl.sh|example-curl|security-playground|security-playground-restricted|security-playground-restricted + container drift enforcement|security-playground-restricted + malware enforcement|
 |-|-|-|-|-|-|

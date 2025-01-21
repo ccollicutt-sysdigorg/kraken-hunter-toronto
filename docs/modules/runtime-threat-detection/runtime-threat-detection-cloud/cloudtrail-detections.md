@@ -13,9 +13,9 @@ At this point, you have logged in to AWS with your workshop user. However, you m
 
 But, Sysdig will detect the lack of MFA and alert you on it!
 
-Go to **Threats** -> **Events Feed**
+Go to **Threats** -> **Events Feed**.
 
-There, select **AWS** under the **Event Source** filter.
+There, select **AWS** under the **Event Source** filter near the top of the page.
 
 !["cloudtrail-detection"]({{site.baseurl}}/assets/images/aws-no-mfa-alert.png)
 

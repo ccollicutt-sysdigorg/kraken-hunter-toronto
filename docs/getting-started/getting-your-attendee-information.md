@@ -9,6 +9,9 @@ nav_order: 1
 {: .goal }
 > This section will help you get your attendee information and credentials to access your AWS and Sysdig accounts. By the end of this section you will have the all the required information to access your AWS and Sysdig accounts.
 
+1. TOC
+{:toc}
+
 ## Get Your Attendee Information
 
 Your instructor will provide you with access to a Google spreadsheet with some credentials to the AWS console and to access your demo Sysdig account.
